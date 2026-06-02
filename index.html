@@ -105,6 +105,16 @@
         <input type="text" id="nome" placeholder="Digite seu nome e turma">
       </div>
 
+<div class="form-group">
+  <label>Destinatário (Nome e turma)</label>
+
+  <input
+    type="text"
+    id="destinatario"
+    placeholder="Digite o nome e turma da pessoa"
+  >
+</div>
+      
       <div class="form-group">
 
         <label>Escolha o tipo da carta</label>
@@ -326,6 +336,10 @@
       const mensagem =
         document.getElementById("mensagem").value;
 
+const nome = document.getElementById("nome").value;
+      const destinatario =
+  document.getElementById("destinatario").value;
+      
       let adicionais = [];
 
       if (document.getElementById("pirulito").checked) {
@@ -351,9 +365,10 @@
 
       const totalTexto = total.innerText;
 
-      let texto =
-        ` *NOVO PEDIDO* %0A%0A
+     let texto =
+` *NOVO PEDIDO* %0A%0A
  Nome: ${nome}%0A
+ Destinatário: ${destinatario}%0A
  Tipo da carta: ${tipo}%0A`;
 
       if (textoBox.style.display === "block") {

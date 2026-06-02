@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartinhas Dia dos Namorados 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <a href="https://wa.me/5551996890929" class="whatsapp-float" target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <div class="hearts" id="hearts"></div>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>Correio Elegante</h1>
+      <p>Surpreenda quem você gosta neste Dia dos Namorados ❤️<br>(pix:51996890929)</p>
+
+      <a href="#pedido" class="btn">
+        Fazer Pedido
+      </a>
+    </section>
+
+
+    <section class="card">
+
+      <h2>Tabela de Preços 💖</h2>
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Carta escrita pela pessoa</td>
+            <td>R$ 2,00</td>
+          </tr>
+
+          <tr>
+            <td>Carta escrita por nós</td>
+            <td>R$ 3,00</td>
+          </tr>
+
+          <tr>
+            <td>Pirulito 7 Belo</td>
+            <td>R$ 1,00</td>
+          </tr>
+
+          <tr>
+            <td>Bombom Sonho de Valsa</td>
+            <td>R$ 1,50</td>
+          </tr>
+
+          <tr>
+            <td>Rosa</td>
+            <td>R$ 3,00</td>
+          </tr>
+
+          <tr>
+            <td>
+              <img src="buquê.jpeg" class="produto-img">
+              Buquê
+            </td>
+            <td>R$ 20,00</td>
+          </tr>
+
+          <tr>
+            <td>Foto pequena</td>
+            <td>R$ 1,50</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </section>
+
+
+    <section class="card" id="pedido">
+
+      <h2>Faça Seu Pedido ❤️</h2>
+
+      <div class="form-group">
+        <label>Seu Nome e turma</label>
+
+        <input type="text" id="nome" placeholder="Digite seu nome e turma">
+      </div>
+
+      <div class="form-group">
+
+        <label>Escolha o tipo da carta</label>
+
+        <select id="tipoCarta">
+
+          <option value="">Selecione</option>
+
+          <option value="2">
+            Carta escrita por você - R$2,00
+          </option>
+
+          <option value="3">
+            Carta escrita por nós - R$3,00
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group" id="textoBox" style="display:none;">
+
+        <label>Escreva sua cartinha</label>
+
+        <textarea id="mensagem" placeholder="Digite aqui sua mensagem..."></textarea>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>Escolha os adicionais</label>
+
+        <div class="extras">
+
+          <div class="extra-box">
+
+            <strong>Pirulito 7 Belo </strong>
+
+            <div class="checkbox">
+
+              <input type="checkbox" id="pirulito" value="1">
+
+              <span>+ R$1,00</span>
+
+            </div>
+
+          </div>
+
+          <div class="extra-box">
+
+            <strong>Sonho de Valsa </strong>
+
+            <div class="checkbox">
+
+              <input type="checkbox" id="bombom" value="1.5">
+
+              <span>+ R$1,50</span>
+
+            </div>
+
+          </div>
+
+          <div class="extra-box">
+
+            <strong>Rosa</strong>
+
+            <div class="checkbox">
+
+              <input type="checkbox" id="rosa" value="3">
+
+              <span>+ R$3,00</span>
+
+            </div>
+
+          </div>
+
+          <div>
+          <div class="extra-box">
+
+            <img src="buquê.jpeg" class="extra-img">
+
+            <strong>Buquê </strong>
+
+            <div class="checkbox">
+              <input type="checkbox" id="buque" value="20">
+              <span>+ R$20,00</span>
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <div class="extra-box">
+
+          <strong>Foto</strong>
+
+          <div class="checkbox">
+
+            <input type="checkbox" id="Foto" value="1.5">
+
+            <span>+ R$1,50</span>
+
+          </div>
+
+        </div>
+      </div>
+
+  </div>
+
+  <div class="total" id="total">
+    Total: R$ 0,00
+  </div>
+
+  <button class="btn" onclick="enviarWhatsApp()">
+    Enviar Pedido no WhatsApp
+  </button>
+
+  </section>
+
+  <footer>
+    Feito com amor 💖
+  </footer>
+
+  </div>
+
+  <script>
+
+    const hearts = document.getElementById("hearts");
+
+    function criarCoracao() {
+
+      const heart = document.createElement("div");
+
+      heart.classList.add("heart");
+
+      heart.innerHTML = "❤";
+
+      heart.style.left = Math.random() * 100 + "vw";
+
+      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+      heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+
+      hearts.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+
+    }
+
+    setInterval(criarCoracao, 300);
+
+    const tipoCarta = document.getElementById("tipoCarta");
+    const textoBox = document.getElementById("textoBox");
+    const total = document.getElementById("total");
+
+    const extras = [
+      document.getElementById("pirulito"),
+      document.getElementById("bombom"),
+      document.getElementById("rosa"),
+      document.getElementById("buque"),
+       document.getElementById("Foto")
+    ];
+
+    function calcularTotal() {
+
+      let valor = 0;
+
+      if (tipoCarta.value) {
+        valor += parseFloat(tipoCarta.value);
+      }
+
+      extras.forEach(item => {
+
+        if (item.checked) {
+          valor += parseFloat(item.value);
+        }
+
+      });
+
+      total.innerHTML =
+        `Total: R$ ${valor.toFixed(2).replace(".", ",")}`;
+
+    }
+
+    tipoCarta.addEventListener("change", () => {
+
+      if (tipoCarta.value === "2") {
+
+        textoBox.style.display = "block";
+
+      } else {
+
+        textoBox.style.display = "none";
+
+      }
+
+      calcularTotal();
+
+    });
+
+    extras.forEach(item => {
+
+      item.addEventListener("change", calcularTotal);
+
+    });
+
+    function enviarWhatsApp() {
+
+      const nome = document.getElementById("nome").value;
+
+      const tipo =
+        tipoCarta.options[tipoCarta.selectedIndex].text;
+
+      const mensagem =
+        document.getElementById("mensagem").value;
+
+      let adicionais = [];
+
+      if (document.getElementById("pirulito").checked) {
+        adicionais.push("Pirulito 7 Belo");
+      }
+
+      if (document.getElementById("bombom").checked) {
+        adicionais.push("Bombom Sonho de Valsa");
+      }
+
+      if (document.getElementById("rosa").checked) {
+        adicionais.push("Rosa");
+      }
+
+      if (document.getElementById("buque").checked) {
+        adicionais.push("buquê");
+      }
+
+      if (document.getElementById("Foto").checked) {
+        adicionais.push("Foto");
+      }
+
+
+      const totalTexto = total.innerText;
+
+      let texto =
+        ` *NOVO PEDIDO* %0A%0A
+ Nome: ${nome}%0A
+ Tipo da carta: ${tipo}%0A`;
+
+      if (textoBox.style.display === "block") {
+
+        texto +=
+          ` Texto da cartinha: ${mensagem}%0A`;
+
+      }
+
+      texto +=
+        ` Adicionais: ${adicionais.length > 0
+          ? adicionais.join(", ")
+          : "Nenhum"
+        }%0A
+ ${totalTexto}`;
+
+      const numero = "5551996890929";
+
+      const link =
+        `https://wa.me/${numero}?text=${texto}`;
+
+      window.open(link, "_blank");
+
+    }
+
+  </script>
+
+</body>
+
+</html>

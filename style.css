@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ffb3c6, #ff4d6d);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* CORAÇÕES */
+
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+  animation: subir 8s linear infinite;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  animation: aparecer 1.2s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ffe5ec;
+}
+
+.btn {
+  margin-top: 25px;
+  display: block;
+  background: white;
+  color: #ff3366;
+  padding: 14px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  margin: 25px auto 0;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #ffe5ec;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 25px;
+  margin-top: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: center;
+}
+
+table th {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.extras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.extra-box {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 18px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.extra-box:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.checkbox input {
+  width: auto;
+  transform: scale(1.2);
+}
+
+.total {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #ffe5ec;
+}
+
+@media(max-width:768px) {
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+}
+
+.produto-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.extra-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.whatsapp-float{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  z-index: 9999;
+
+  background: #25D366; /* Cor de fundo */
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,.3);
+  transition: .3s;
+  padding: 8px;
+}
+
+.whatsapp-float:hover{
+  transform: scale(1.1);
+}
+
+.whatsapp-float img{
+  width: 150%;
+  height: 150%;
+  object-fit: contain;
+}
